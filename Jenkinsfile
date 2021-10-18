@@ -422,7 +422,7 @@ wari-migration-app-reports-ear''', description: 'Los nombres de las aplicaciones
 	  def dmgr_server_keys_to_apps_to_install = [:]
       apps_to_install.each { app_to_install_name, deploy_configurations ->
         def dmgr_server_key = deploy_configurations.get('dmgr_server_key')
-        def app_config = {'app_name':app_to_install_name, 'topology':deploy_configurations.get('topology'), 'ear_name':deploy_configurations.get('ear_name'), 'installation_type': deploy_configurations.get('installation_type') }
+        def app_config =  deploy_configurations.get('dmgr_server_key')
         def app_install_config = dmgr_server_keys_to_apps_to_install.get(dmgr_server_key)
         if (app_install_config == null){
 		  app_install_config = []
